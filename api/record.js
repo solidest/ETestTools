@@ -201,3 +201,74 @@ const shortid = require('shortid');
             ]
         }
  */
+
+
+
+/**
+@apiVersion 0.1.0
+@api {get} /query 条件查询
+@apiDescription 按查询条件获取指定用例执行产生的记录
+@apiName record_query_list
+@apiGroup b_record
+
+@apiParam {String} protocol 协议id
+@apiParam {Number} begintime 开始时间戳
+@apiParam {Number} limit 返回的记录条数
+@apiParam {String} [type] 类型 write|read
+@apiParam {String} [filter] 协议字段条件语句
+@apiParamExample {json} Request-Example:
+    {
+        "protocol":"prot_idxxxx",
+        "begintime":"949366920002",
+        "type":"write",
+        "limit":"1000",
+        "filter":"seg1>100 and seg2.b==true",
+    }
+
+@apiSuccess (Success) {Number} code 状态代码; 0:成功
+@apiSuccess (Success) {String} msg  状态信息
+@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {String} data.id 记录id
+@apiSuccess (Success) {String} data.type 记录类型
+@apiSuccess (Success) {String} data.timestamp UTC时间
+@apiSuccess (Success) {Object} data.raw 原始数据
+@apiSuccess (Success) {String} [data.tag] 说明信息
+
+@apiSuccessExample {json} Response-Success-Example:
+        HTTP/1.1 200 OK
+        {
+            "code": 0,
+            "msg": "操作成功",
+            "data": [
+                {
+                    "id": "TptEJMYA",
+                    "timestamp": 949366920000,
+                    "type": "read",
+                    "protocol": "协议1",
+                    "raw": {
+                        "seg1": 100,
+                        "seg2": 200,
+                        "seg3": [
+                            "aaaa",
+                            "bbbb"
+                        ]
+                    }
+                },
+                {
+                    "id": "75lqkNdL1",
+                    "timestamp": 949366920001,
+                    "type": "write",
+                    "protocol": "协议2",
+                    "raw": {
+                        "seg1": 300,
+                        "seg2": 600,
+                        "seg3": [
+                            "bbbb",
+                            "cccc"
+                        ]
+                    }
+                },
+                ...
+            ]
+        }
+ */

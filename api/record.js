@@ -16,8 +16,6 @@ const shortid = require('shortid');
 @apiParam {Number} tm 【URL路径参数】起始时间戳
 @apiParam {Number} count 【URL路径参数】获取的记录条数
 
-@apiSuccess (Success) {Number} code 状态代码; 0:成功
-@apiSuccess (Success) {String} msg  状态信息
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
 @apiSuccess (Success) {String} data.type 记录类型
@@ -33,8 +31,6 @@ const shortid = require('shortid');
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
         {
-            "code": 0,
-            "msg": "操作成功",
             "data": [
                 {
                     "id": "TptEJMYA",
@@ -91,8 +87,6 @@ const shortid = require('shortid');
 @apiParam {Number} tm 【URL路径参数】起始时间戳
 @apiParam {Number} count 【URL路径参数】获取的记录条数
 
-@apiSuccess (Success) {Number} code 状态代码; 0:成功
-@apiSuccess (Success) {String} msg  状态信息
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
 @apiSuccess (Success) {String} data.type 记录类型
@@ -106,8 +100,6 @@ const shortid = require('shortid');
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
         {
-            "code": 0,
-            "msg": "操作成功",
             "data": [
                 {
                     "id": "TptEJMYA",
@@ -167,8 +159,6 @@ const shortid = require('shortid');
 
 @apiParam {string} id 【URL路径参数】用例执行id
 
-@apiSuccess (Success) {Number} code 状态代码; 0:成功
-@apiSuccess (Success) {String} msg  状态信息
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
 @apiSuccess (Success) {Boolean} data.result 断言是否执行成功
@@ -182,8 +172,6 @@ const shortid = require('shortid');
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
         {
-            "code": 0,
-            "msg": "操作成功",
             "data": [
                 {
                     "id": "TptEJMYA",
@@ -225,8 +213,6 @@ const shortid = require('shortid');
         "filter":"seg1>100 and seg2.b==true",
     }
 
-@apiSuccess (Success) {Number} code 状态代码; 0:成功
-@apiSuccess (Success) {String} msg  状态信息
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
 @apiSuccess (Success) {String} data.type 记录类型
@@ -237,8 +223,6 @@ const shortid = require('shortid');
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
         {
-            "code": 0,
-            "msg": "操作成功",
             "data": [
                 {
                     "id": "TptEJMYA",

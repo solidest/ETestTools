@@ -12,8 +12,6 @@ const shortid = require('shortid');
 @apiName a0_projects_list
 @apiGroup a_sort
 
-@apiSuccess (Success) {Number} code 状态代码; 0:成功
-@apiSuccess (Success) {String} msg  状态信息
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 项目id
 @apiSuccess (Success) {String} data.name 项目名称
@@ -22,8 +20,6 @@ const shortid = require('shortid');
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
         {
-            "code": 0,
-            "msg": "操作成功",
             "data": [
                 {
                     "id": "TptEJMYA",
@@ -68,8 +64,6 @@ const shortid = require('shortid');
 
 @apiParam {string} id 【URL路径参数】项目id
 
-@apiSuccess (Success) {Number} code 状态代码; 0:成功
-@apiSuccess (Success) {String} msg  状态信息
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 测试用例id
 @apiSuccess (Success) {String} data.name 测试用例名称
@@ -81,8 +75,6 @@ const shortid = require('shortid');
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
         {
-            "code": 0,
-            "msg": "操作成功",
             "data": [
                 {
                     "id": "25Wh_rD3",
@@ -128,8 +120,6 @@ function testcase_list() {
 
 @apiParam {string} id 【URL路径参数】用例id
 
-@apiSuccess (Success) {Number} code 状态代码; 0:成功
-@apiSuccess (Success) {String} msg  状态信息
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id id标识
 @apiSuccess (Success) {DateTime} data.begintime UTC开始时间
@@ -142,8 +132,6 @@ function testcase_list() {
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
         {
-            "code": 0,
-            "msg": "操作成功",
             "data": [
                 {
                     "id": "9_KVvHc7",
@@ -193,8 +181,6 @@ console.log(JSON.stringify(res, null, 4));
 
 @apiParam {string} id 【URL路径参数】用例执行id
 
-@apiSuccess (Success) {Number} code 状态代码; 0:成功
-@apiSuccess (Success) {String} msg  状态信息
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 协议id
 @apiSuccess (Success) {String} data.name 协议名称
@@ -206,8 +192,6 @@ console.log(JSON.stringify(res, null, 4));
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
         {
-            "code": 0,
-            "msg": "操作成功",
             "data": [
                 {
                     "id": "25Wh_rD3",

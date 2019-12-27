@@ -1,0 +1,1 @@
+define({  "title": "历史数据API",  "url": "/api/recorded/",  "name": "etest_tools",  "version": "1.0.0",  "description": "tools for etest",  "sampleUrl": false,  "defaultVersion": "0.0.0",  "apidoc": "0.3.0",  "generator": {    "name": "apidoc",    "time": "2019-12-27T11:00:54.861Z",    "url": "http://apidocjs.com",    "version": "0.17.7"  }});

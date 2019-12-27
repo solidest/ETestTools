@@ -1,0 +1,23 @@
+{
+  "name": "etest_tools",
+  "version": "1.0.0",
+  "description": "tools for etest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solidest/ETestTools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solidest/ETestTools/issues"
+  },
+  "homepage": "https://github.com/solidest/ETestTools#readme",
+  "apidoc": {
+    "title": "历史数据API",
+    "url" : "/api/recorded/"
+  }
+}

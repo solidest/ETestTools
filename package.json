@@ -15,9 +15,5 @@
   "bugs": {
     "url": "https://github.com/solidest/ETestTools/issues"
   },
-  "homepage": "https://github.com/solidest/ETestTools#readme",
-  "apidoc": {
-    "title": "历史数据API",
-    "url" : "/api/recorded/"
-  }
+  "homepage": "https://github.com/solidest/ETestTools#readme"
 }

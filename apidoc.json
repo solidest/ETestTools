@@ -1,0 +1,6 @@
+{
+    "name": "ETest Recorded API",
+    "version": "0.1.0",
+    "description": "ETest历史数据访问接口",
+    "url" : "http://localhost:8000/api/recorded"
+}

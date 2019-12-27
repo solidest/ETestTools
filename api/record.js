@@ -206,7 +206,7 @@ const shortid = require('shortid');
 
 /**
 @apiVersion 0.1.0
-@api {get} /query 条件查询
+@api {post} /query 条件查询
 @apiDescription 按查询条件获取指定用例执行产生的记录
 @apiName record_query_list
 @apiGroup b_record

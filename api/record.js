@@ -328,7 +328,7 @@ const shortid = require('shortid');
                     "channel": "通道1"
                     "type": "read",
                     "raw": "H03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAA",
-                    “protocol": "fjei8IHG"
+                    "protocol": "AF97yHY"
                 },
                 {
                     "id": "Ab87SJf",
@@ -336,7 +336,7 @@ const shortid = require('shortid');
                     "channel": "通道2"
                     "type": "write",
                     "raw": "A03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAJ",
-                    “protocol": "AF97yHY"
+                    "protocol": "AF97yHY"
                 },
                 ...
             ]

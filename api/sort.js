@@ -207,3 +207,41 @@ console.log(JSON.stringify(res, null, 4));
         }
 
  */
+
+ 
+
+/**
+@apiVersion 0.1.0
+@api {get} /channels?runtime=:id 通道列表
+@apiDescription 获取指定用例执行时的全部通道列表信息
+@apiName a1_channel_list
+@apiGroup a_sort
+
+@apiParam {string} id 【URL路径参数】用例执行id
+
+@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {String} data.id 通道id
+@apiSuccess (Success) {String} data.name 通道名称
+@apiSuccess (Success) {String} [data.tag] 说明信息
+
+@apiParamExample {url} Request-Example:
+    http://localhost:8000/api/recorded/channels?runtime=75lqkNdL1
+
+@apiSuccessExample {json} Response-Success-Example:
+        HTTP/1.1 200 OK
+        {
+            "data": [
+                {
+                    "id": "25Wh_rD3",
+                    "name": "通道1",
+                    "tag": "通道1的说明"
+                },
+                {
+                    "id": "kXhbfRAWg",
+                    "name": "通道2",
+                    "tag": "通道2的说明"
+                }
+            ]
+        }
+
+ */

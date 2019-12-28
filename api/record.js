@@ -37,6 +37,7 @@ const shortid = require('shortid');
                     "timestamp": 949366920000,
                     "type": "read",
                     "protocol": "协议1",
+                    "channel": "通道1"
                     "raw": {
                         "seg1": 100,
                         "seg2": 200,
@@ -90,12 +91,13 @@ const shortid = require('shortid');
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
 @apiSuccess (Success) {String} data.type 记录类型
+@apiSuccess (Success) {String} data.channel 通道id
 @apiSuccess (Success) {String} data.timestamp UTC时间
 @apiSuccess (Success) {Object} data.raw 原始数据
 @apiSuccess (Success) {String} [data.tag] 说明信息
 
 @apiParamExample {url} Request-Example:
-    http://localhost:8000/api/recorded/ioprotocolio/89afj3?runtime=75lqkNdL1&from=949366980000&limit=1000
+    http://localhost:8000/api/recorded/ioprotocol/89afj3?runtime=75lqkNdL1&from=949366980000&limit=1000
 
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK
@@ -106,6 +108,7 @@ const shortid = require('shortid');
                     "timestamp": 949366920000,
                     "type": "read",
                     "protocol": "协议1",
+                    "channel": "通道1"
                     "raw": {
                         "seg1": 100,
                         "seg2": 200,
@@ -120,6 +123,7 @@ const shortid = require('shortid');
                     "timestamp": 949366920001,
                     "type": "write",
                     "protocol": "协议2",
+                    "channel": "通道1"
                     "raw": {
                         "seg1": 300,
                         "seg2": 600,
@@ -194,9 +198,9 @@ const shortid = require('shortid');
 
 /**
 @apiVersion 0.1.0
-@api {put} /query 条件查询
-@apiDescription 按查询条件获取指定用例执行产生的记录
-@apiName record_query_list
+@api {put} /query/ioprotocol 查询协议IO
+@apiDescription 按协议查询条件获取指定用例执行产生的记录
+@apiName record_query_ioprotocol
 @apiGroup b_record
 
 @apiParam {String} protocol 协议id
@@ -215,6 +219,7 @@ const shortid = require('shortid');
 
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
+@apiSuccess (Success) {String} data.channel 通道id
 @apiSuccess (Success) {String} data.type 记录类型
 @apiSuccess (Success) {String} data.timestamp UTC时间
 @apiSuccess (Success) {Object} data.raw 原始数据
@@ -229,6 +234,7 @@ const shortid = require('shortid');
                     "timestamp": 949366920000,
                     "type": "read",
                     "protocol": "协议1",
+                    "channel": "通道1"
                     "raw": {
                         "seg1": 100,
                         "seg2": 200,
@@ -243,6 +249,7 @@ const shortid = require('shortid');
                     "timestamp": 949366920001,
                     "type": "write",
                     "protocol": "协议2",
+                    "channel": "通道1"
                     "raw": {
                         "seg1": 300,
                         "seg2": 600,
@@ -251,6 +258,104 @@ const shortid = require('shortid');
                             "cccc"
                         ]
                     }
+                },
+                ...
+            ]
+        }
+ */
+
+ 
+
+/**
+@apiVersion 0.1.0
+@api {put} /query/iochannel 查询通道IO
+@apiDescription 查询指定通道列表上的IO记录
+@apiName record_query_iochannel
+@apiGroup b_record
+
+@apiParam {String[]} channels 通道id列表
+@apiParam {Number} begintime 开始时间戳
+@apiParam {Number} limit 返回的记录条数
+
+@apiParamExample {json} Request-Example:
+    {
+        "channels":[
+            "channel1_id",
+            "channel2_id"
+        ],
+        "begintime":"949366920002",
+        "limit":"1000"
+    }
+
+@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {String} data.id 记录id
+@apiSuccess (Success) {String} data.type 记录类型 read|write
+@apiSuccess (Success) {String} data.timestamp UTC时间
+@apiSuccess (Success) {Object} data.raw 原始数据 16进制buffer
+@apiSuccess (Success) {String} [data.tag] 说明信息
+
+@apiSuccessExample {json} Response-Success-Example:
+        HTTP/1.1 200 OK
+        {
+            "data": [
+                {
+                    "id": "TptEJMYA",
+                    "timestamp": 949366920000,
+                    "channel": "通道1"
+                    "type": "read",
+                    "raw": "H03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAA"
+                },
+                {
+                    "id": "Ab87SJf",
+                    "timestamp": 949366920001,
+                    "channel": "通道2"
+                    "type": "write",
+                    "raw": "A03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAJ"
+                },
+                ...
+            ]
+        }
+ */
+
+ 
+
+/**
+@apiVersion 0.1.0
+@api {put} /query/var 查询变量
+@apiDescription 查询指定通道列表上的IO记录
+@apiName record_query_vars
+@apiGroup b_record
+
+@apiParam {String} var 变量id列表
+@apiParam {Number} begintime 开始时间戳
+@apiParam {Number} limit 返回的记录条数
+
+@apiParamExample {json} Request-Example:
+    {
+        "var": "约束变量1",
+        "begintime":"949366920002",
+        "limit":"1000"
+    }
+
+@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {String} data.id 记录id
+@apiSuccess (Success) {String} data.timestamp UTC时间
+@apiSuccess (Success) {Number} data.value 变量值
+@apiSuccess (Success) {String} [data.tag] 说明信息
+
+@apiSuccessExample {json} Response-Success-Example:
+        HTTP/1.1 200 OK
+        {
+            "data": [
+                {
+                    "id": "TptEJMYA",
+                    "timestamp": 949366920000,
+                    "value": 10.98
+                },
+                {
+                    "id": "Ab87SJf",
+                    "timestamp": 949366920001,
+                    "value": 12.88
                 },
                 ...
             ]

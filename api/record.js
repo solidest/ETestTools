@@ -172,7 +172,7 @@ const shortid = require('shortid');
 @apiGroup b_record
 
 @apiParam {string} id 【URL路径参数】用例执行id
-@apiParam {string} [bv] 【URL路径参数】断言执行结果,fasle|true,未提供此参数时获取全部断言
+@apiParam {string} [bv] 【URL路径参数】断言执行结果布尔值fasle或true,未提供此参数时获取全部断言
 
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
@@ -315,6 +315,7 @@ const shortid = require('shortid');
 @apiSuccess (Success) {String} data.type 记录类型 read|write
 @apiSuccess (Success) {String} data.timestamp UTC时间
 @apiSuccess (Success) {Object} data.raw 原始数据 16进制buffer
+@apiSuccess (Success) {String} [data.protocol] 和数据raw对应的协议io记录id
 @apiSuccess (Success) {String} [data.tag] 说明信息
 
 @apiSuccessExample {json} Response-Success-Example:
@@ -326,14 +327,16 @@ const shortid = require('shortid');
                     "timestamp": 949366920000,
                     "channel": "通道1"
                     "type": "read",
-                    "raw": "H03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAA"
+                    "raw": "H03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAA",
+                    “protocol": "fjei8IHG"
                 },
                 {
                     "id": "Ab87SJf",
                     "timestamp": 949366920001,
                     "channel": "通道2"
                     "type": "write",
-                    "raw": "A03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAJ"
+                    "raw": "A03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAAH03746AB383CFAJ",
+                    “protocol": "AF97yHY"
                 },
                 ...
             ]

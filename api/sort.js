@@ -12,7 +12,7 @@ const shortid = require('shortid');
 @apiName a0_projects_list
 @apiGroup a_sort
 
-@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {Object[]}  data 成功返回的数据，按最后一次执行的时间倒序排列，即最后执行的项目在最前
 @apiSuccess (Success) {String} data.id 项目id
 @apiSuccess (Success) {String} data.name 项目名称
 @apiSuccess (Success) {String} [data.tag] 说明信息
@@ -64,7 +64,7 @@ const shortid = require('shortid');
 
 @apiParam {string} id 【URL路径参数】项目id
 
-@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {Object[]}  data 成功返回的数据，按用例名称排序
 @apiSuccess (Success) {String} data.id 测试用例id
 @apiSuccess (Success) {String} data.name 测试用例名称
 @apiSuccess (Success) {String} [data.tag] 说明信息
@@ -120,7 +120,7 @@ function testcase_list() {
 
 @apiParam {string} id 【URL路径参数】用例id
 
-@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {Object[]}  data 成功返回的数据，按开始时间排序
 @apiSuccess (Success) {String} data.id id标识
 @apiSuccess (Success) {DateTime} data.begintime UTC开始时间
 @apiSuccess (Success) {DateTime} data.endtime UTC结束时间
@@ -181,7 +181,7 @@ console.log(JSON.stringify(res, null, 4));
 
 @apiParam {string} id 【URL路径参数】用例执行id
 
-@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {Object[]}  data 成功返回的数据，按名称排序
 @apiSuccess (Success) {String} data.id 协议id
 @apiSuccess (Success) {String} data.name 协议名称
 @apiSuccess (Success) {String} [data.tag] 说明信息
@@ -219,7 +219,7 @@ console.log(JSON.stringify(res, null, 4));
 
 @apiParam {string} id 【URL路径参数】用例执行id
 
-@apiSuccess (Success) {Object[]}  data 成功返回的数据
+@apiSuccess (Success) {Object[]}  data 成功返回的数据，按用通道名称排序
 @apiSuccess (Success) {String} data.id 通道id
 @apiSuccess (Success) {String} data.name 通道名称
 @apiSuccess (Success) {String} [data.tag] 说明信息

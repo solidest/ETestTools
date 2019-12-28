@@ -52,7 +52,17 @@ const shortid = require('shortid');
                     "type": "assert",
                     "raw": {
                         "result": true,
-                        "info": "断言失败时的信息"
+                        "info": {
+                            "输入参数": {
+                                "a": 12,
+                                "b": 14
+                            },
+                            "预期结果": {
+                                "c": 100
+                                ....
+                            },
+                            ....
+                        }
                     }
                 },
                 ...
@@ -167,7 +177,7 @@ const shortid = require('shortid');
 @apiSuccess (Success) {String} data.id 记录id
 @apiSuccess (Success) {Boolean} data.result 断言是否执行成功
 @apiSuccess (Success) {String} data.timestamp UTC时间
-@apiSuccess (Success) {String} data.info 用户提供的提示信息
+@apiSuccess (Success) {Object} data.info 断言失败时的提示信息
 @apiSuccess (Success) {String} [data.tag] 说明信息
 
 @apiParamExample {url} Request-Example:
@@ -181,13 +191,23 @@ const shortid = require('shortid');
                     "id": "TptEJMYA",
                     "timestamp": 949366920001,
                     "result": false,
-                    "info": "断言成功"
+                    "info": {
+                            "输入参数": {
+                                "a": 12,
+                                "b": 14
+                            },
+                            "预期结果": {
+                                "c": 100
+                                ....
+                            },
+                            ....
+                    }
                 },
                 {
                     "id": "75lqkNdL1",
                     "timestamp": 949366920002,
                     "result": true,
-                    "info": "断言失败时的信息"
+                    "info": null
                 },
                 ...
             ]

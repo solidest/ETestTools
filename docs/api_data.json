@@ -22,34 +22,6 @@
     "type": "",
     "url": "",
     "version": "0.0.0",
-    "filename": "./doc/main.js",
-    "group": "C__Users_solidest_Desktop_ETestTools_doc_main_js",
-    "groupTitle": "C__Users_solidest_Desktop_ETestTools_doc_main_js",
-    "name": ""
-  },
-  {
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "varname1",
-            "description": "<p>No type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "varname2",
-            "description": "<p>With type.</p>"
-          }
-        ]
-      }
-    },
-    "type": "",
-    "url": "",
-    "version": "0.0.0",
     "filename": "./docs/main.js",
     "group": "C__Users_solidest_Desktop_ETestTools_docs_main_js",
     "groupTitle": "C__Users_solidest_Desktop_ETestTools_docs_main_js",
@@ -518,7 +490,7 @@
             "type": "Number",
             "optional": false,
             "field": "count",
-            "description": "<p>【URL路径参数】获取的记录条数</p>"
+            "description": "<p>【URL路径参数】获取的记录条数，负数表示组后count条记录</p>"
           }
         ]
       },
@@ -639,7 +611,7 @@
             "type": "Number",
             "optional": false,
             "field": "count",
-            "description": "<p>【URL路径参数】获取的记录条数</p>"
+            "description": "<p>【URL路径参数】获取的记录条数，负数表示组后count条记录</p>"
           }
         ]
       },

@@ -14,7 +14,7 @@ const shortid = require('shortid');
 
 @apiParam {string} id 【URL路径参数】用例执行id
 @apiParam {Number} tm 【URL路径参数】起始时间戳
-@apiParam {Number} count 【URL路径参数】获取的记录条数
+@apiParam {Number} count 【URL路径参数】获取的记录条数，负数表示组后count条记录
 
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
@@ -96,7 +96,7 @@ const shortid = require('shortid');
 @apiParam {string} prot 【URL路径参数】协议id
 @apiParam {string} id 【URL路径参数】用例执行id
 @apiParam {Number} tm 【URL路径参数】起始时间戳
-@apiParam {Number} count 【URL路径参数】获取的记录条数
+@apiParam {Number} count 【URL路径参数】获取的记录条数，负数表示组后count条记录
 
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id

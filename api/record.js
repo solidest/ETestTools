@@ -166,12 +166,13 @@ const shortid = require('shortid');
 
 /**
 @apiVersion 0.1.0
-@api {get} /asserts?runtime=:id  断言记录
+@api {get} /asserts?runtime=:id&result=:bv  断言记录
 @apiDescription 获取指定用例执行产生的全部断言记录
 @apiName record_asserts_list
 @apiGroup b_record
 
 @apiParam {string} id 【URL路径参数】用例执行id
+@apiParam {string} [bv] 【URL路径参数】断言执行结果,fasle|true,未提供此参数时获取全部断言
 
 @apiSuccess (Success) {Object[]}  data 成功返回的数据
 @apiSuccess (Success) {String} data.id 记录id
@@ -181,7 +182,7 @@ const shortid = require('shortid');
 @apiSuccess (Success) {String} [data.tag] 说明信息
 
 @apiParamExample {url} Request-Example:
-    http://localhost:8000/api/recorded/asserts?runtime=75lqkNdL1
+    http://localhost:8000/api/recorded/asserts?runtime=75lqkNdL1&result=false
 
 @apiSuccessExample {json} Response-Success-Example:
         HTTP/1.1 200 OK

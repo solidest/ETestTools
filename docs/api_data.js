@@ -377,7 +377,7 @@ define({ "api": [
   {
     "version": "0.1.0",
     "type": "get",
-    "url": "/asserts?runtime=:id",
+    "url": "/asserts?runtime=:id&result=:bv",
     "title": "断言记录",
     "description": "<p>获取指定用例执行产生的全部断言记录</p>",
     "name": "record_asserts_list",
@@ -391,13 +391,20 @@ define({ "api": [
             "optional": false,
             "field": "id",
             "description": "<p>【URL路径参数】用例执行id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "bv",
+            "description": "<p>【URL路径参数】断言执行结果,fasle|true,未提供此参数时获取全部断言</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "http://localhost:8000/api/recorded/asserts?runtime=75lqkNdL1",
+          "content": "http://localhost:8000/api/recorded/asserts?runtime=75lqkNdL1&result=false",
           "type": "url"
         }
       ]

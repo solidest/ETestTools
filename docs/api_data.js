@@ -490,7 +490,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "count",
-            "description": "<p>【URL路径参数】获取的记录条数，负数表示组后count条记录</p>"
+            "description": "<p>【URL路径参数】获取的记录条数，负数表示最后count条记录</p>"
           }
         ]
       },
@@ -611,7 +611,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "count",
-            "description": "<p>【URL路径参数】获取的记录条数，负数表示组后count条记录</p>"
+            "description": "<p>【URL路径参数】获取的记录条数，负数表示最后count条记录</p>"
           }
         ]
       },
@@ -725,7 +725,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "limit",
-            "description": "<p>返回的记录条数</p>"
+            "description": "<p>返回的记录条数，负数表示最后limit条记录</p>"
           }
         ]
       },
@@ -832,7 +832,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "limit",
-            "description": "<p>返回的记录条数</p>"
+            "description": "<p>返回的记录条数，负数表示最后limit条记录</p>"
           },
           {
             "group": "Parameter",
@@ -960,7 +960,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "limit",
-            "description": "<p>返回的记录条数</p>"
+            "description": "<p>返回的记录条数，负数表示最后limit条记录</p>"
           }
         ]
       },

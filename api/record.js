@@ -198,11 +198,12 @@ const shortid = require('shortid');
 
 /**
 @apiVersion 0.1.0
-@api {put} /query/ioprotocol 查询协议IO
+@api {put} /query/ioprotocol?runtime=:id 查询协议IO
 @apiDescription 按协议查询条件获取指定用例执行产生的记录
 @apiName record_query_ioprotocol
 @apiGroup b_record
 
+@apiParam {string} id 【URL路径参数】用例执行id
 @apiParam {String} protocol 协议id
 @apiParam {Number} begintime 开始时间戳
 @apiParam {Number} limit 返回的记录条数
@@ -268,11 +269,12 @@ const shortid = require('shortid');
 
 /**
 @apiVersion 0.1.0
-@api {put} /query/iochannel 查询通道IO
+@api {put} /query/iochannel?runtime=:id 查询通道IO
 @apiDescription 查询指定通道列表上的IO记录
 @apiName record_query_iochannel
 @apiGroup b_record
 
+@apiParam {string} id 【URL路径参数】用例执行id
 @apiParam {String[]} channels 通道id列表
 @apiParam {Number} begintime 开始时间戳
 @apiParam {Number} limit 返回的记录条数
@@ -321,11 +323,12 @@ const shortid = require('shortid');
 
 /**
 @apiVersion 0.1.0
-@api {put} /query/var 查询变量
+@api {put} /query/var?runtime=:id 查询变量
 @apiDescription 查询指定通道列表上的IO记录
 @apiName record_query_vars
 @apiGroup b_record
 
+@apiParam {string} id 【URL路径参数】用例执行id
 @apiParam {String} var 变量id列表
 @apiParam {Number} begintime 开始时间戳
 @apiParam {Number} limit 返回的记录条数

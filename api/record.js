@@ -256,7 +256,7 @@ const shortid = require('shortid');
                     "timestamp": 949366920000,
                     "type": "read",
                     "protocol": "协议1",
-                    "channel": "通道1"
+                    "channel": "通道1",
                     "raw": {
                         "seg1": 100,
                         "seg2": 200,
@@ -271,7 +271,7 @@ const shortid = require('shortid');
                     "timestamp": 949366920001,
                     "type": "write",
                     "protocol": "协议2",
-                    "channel": "通道1"
+                    "channel": "通道1",
                     "raw": {
                         "seg1": 300,
                         "seg2": 600,
